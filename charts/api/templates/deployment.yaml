@@ -1,0 +1,66 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "ryr-api.fullname" . }}
+  labels:
+    app: {{ template "ryr-api.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "ryr-api.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      initContainers:
+        - name: postgresql-init
+          image: postgres:10.1-alpine
+          command: ["sh", "-c", "echo -n Waiting for database...; until pg_isready; do  sleep 2; echo -n .; done; echo OK."]
+          env:
+            - name: PGHOST
+              value: $(POSTGRESQL_POSTGRESQL_SERVICE_HOST)
+            - name: PGPORT
+              value: $(POSTGRESQL_POSTGRESQL_SERVICE_PORT)
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["bash", "/django-entrypoint.sh"]
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: {{ .Values.service.internalPort }}
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: {{ .Values.service.internalPort }}
+          envFrom:
+            - configMapRef:
+                name: {{ template "ryr-api.fullname" . }}
+            - secretRef:
+                name: ryr-api-secrets
+          {{- if .Values.env }}
+          env:
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $value }}
+            {{- end }}
+          {{- end }}
+          volumeMounts:
+            - mountPath: "/code"
+              name: code
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
+      volumes:
+        - name: code
+          persistentVolumeClaim:
+            claimName: {{ template "ryr-api.fullname" . }}

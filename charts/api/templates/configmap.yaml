@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "ryr-api.fullname" . }}
+  namespace: default
+data:
+{{- if .Values.configmap }}
+{{- range $key, $value := .Values.configmap }}
+  {{ $key }}: {{ $value }}
+{{- end }}
+{{- end }}

@@ -3,19 +3,23 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: nginx
+  repository: requestyoracks/api
   tag: stable
   pullPolicy: IfNotPresent
+
+# Configure the Service
 service:
-  name: nginx
+  name: api
   type: ClusterIP
-  externalPort: 80
-  internalPort: 80
+  externalPort: 8000
+  internalPort: 8000
+
+# Configure the ingress.
 ingress:
-  enabled: false
+  enabled: true
   # Used to create an Ingress record.
   hosts:
-    - chart-example.local
+    - api.192.168.99.100.nip.io
   annotations:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -35,3 +39,20 @@ resources: {}
   # requests:
   #  cpu: 100m
   #  memory: 128Mi
+
+env:
+  DATABASE_URL:  postgres://postgres:postgres@$(POSTGRESQL_POSTGRESQL_SERVICE_HOST):$(POSTGRESQL_POSTGRESQL_SERVICE_PORT)/postgres
+  REDIS_URL: redis://$(REDIS_REDIS_SERVICE_HOST):$(REDIS_REDIS_SERVICE_PORT)
+# Configure the persistence.
+# This also allows live reload in minikube.
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  hostPath:
+    path: /data
+
+# Configmap for the API.
+configmap:
+  DJANGO_SETTINGS_MODULE: api.settings.local
+  RYR_API_API_OPTS: "--reload --timeout 1800 --chdir /code"
