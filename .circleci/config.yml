@@ -1,0 +1,13 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/golang:1.8.1
+     steps:
+       - checkout
+       - run:
+           name: Install tools
+           command: tests/circle/install.sh
+       - run:
+           name: Run the linters
+           command: make ci-linters
