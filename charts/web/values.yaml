@@ -38,3 +38,12 @@ resources: {}
   # requests:
   #  cpu: 100m
   #  memory: 128Mi
+
+# Configure the persistence.
+# This also allows live reload in minikube.
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  hostPath:
+    path: /data
