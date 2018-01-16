@@ -3,11 +3,21 @@ entries:
   api:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-01-14T19:27:44.658191-06:00
+    created: 2018-01-15T21:46:15.37345-06:00
     description: A Helm chart for Kubernetes
     digest: 9dcfc33becaa9bad3ba848e74bb4f829abf4abb42ac7baf84866b57ba3a04e3c
     name: api
     urls:
     - https://request-yo-racks.github.io/charts/api-0.1.0.tgz
     version: 0.1.0
-generated: 2018-01-14T19:27:44.651294-06:00
+  web:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: 2018-01-15T21:46:15.373974-06:00
+    description: RYR web chart
+    digest: 0975efefdfda24339741fa8c9f52841e88c05e4dac8db0a160e97dd40153a2c3
+    name: web
+    urls:
+    - https://request-yo-racks.github.io/charts/web-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-01-15T21:46:15.365781-06:00
