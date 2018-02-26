@@ -3,7 +3,7 @@ entries:
   api:
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-02-25T21:24:17.327156-06:00
+    created: 2018-02-25T21:36:28.309219-06:00
     description: RYR api chart
     digest: 31857a014fa0cf6dea669688d9a6e3626afaee8b6d531f12366a102302ed9f3f
     name: api
@@ -12,7 +12,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-02-25T21:24:17.326759-06:00
+    created: 2018-02-25T21:36:28.308867-06:00
     description: A Helm chart for Kubernetes
     digest: 9dcfc33becaa9bad3ba848e74bb4f829abf4abb42ac7baf84866b57ba3a04e3c
     name: api
@@ -21,8 +21,17 @@ entries:
     version: 0.1.0
   web:
   - apiVersion: v1
+    appVersion: 0.1.1
+    created: 2018-02-25T21:36:28.31028-06:00
+    description: RYR web chart
+    digest: 74f123de307db6ec04a51bac8aadf7e661336ab33f19db97c337b7ef0761a57b
+    name: web
+    urls:
+    - https://request-yo-racks.github.io/charts/web-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-02-25T21:24:17.32784-06:00
+    created: 2018-02-25T21:36:28.309838-06:00
     description: RYR web chart
     digest: 4042ba3cd64a09367476d005dfdcd477cd65cd05af9334839a95fab72badca91
     name: web
@@ -31,11 +40,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-02-25T21:24:17.327484-06:00
+    created: 2018-02-25T21:36:28.3095-06:00
     description: RYR web chart
     digest: 0975efefdfda24339741fa8c9f52841e88c05e4dac8db0a160e97dd40153a2c3
     name: web
     urls:
     - https://request-yo-racks.github.io/charts/web-0.1.0.tgz
     version: 0.1.0
-generated: 2018-02-25T21:24:17.326106-06:00
+generated: 2018-02-25T21:36:28.308256-06:00
