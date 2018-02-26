@@ -21,9 +21,9 @@ spec:
           command: ["sh", "-c", "echo -n Waiting for database...; until pg_isready; do  sleep 2; echo -n .; done; echo OK."]
           env:
             - name: PGHOST
-              value: $(POSTGRESQL_POSTGRESQL_SERVICE_HOST)
+              value: $(POSTGRESQL_SERVICE_HOST)
             - name: PGPORT
-              value: $(POSTGRESQL_POSTGRESQL_SERVICE_PORT)
+              value: $(POSTGRESQL_SERVICE_PORT)
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
