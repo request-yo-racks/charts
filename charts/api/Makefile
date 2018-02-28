@@ -25,6 +25,6 @@ dist: clean
 	@mkdir -p $(DIST_DIR) && helm package -d $(DIST_DIR) -u .
 
 push:
-	@echo "Not implementes" && exit 1
+	@bash $(TOPDIR)/tools/publish.sh
 
 .PHONY: ci-linters clean dist push
