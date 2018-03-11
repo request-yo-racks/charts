@@ -5,7 +5,7 @@ PROJECT_NAME = web
 SHELL = /bin/bash
 TOPDIR = $(shell git rev-parse --show-toplevel)
 
-DIST_DIR=$(TOPDIR)
+DIST_DIR=$(TOPDIR)/dist
 
 help: # Display help
 	@awk -F ':|##' \
@@ -16,15 +16,12 @@ help: # Display help
 default: ci-linters
 
 ci-linters:  ## Run the static analyzers
-	@helm lint --strict .
+	@helm lint .
 
 clean: ## Remove unwanted files in this project (!DESTRUCTIVE!)
 	@git clean -ffdx && git reset --hard
 
-dist: clean
+dist: clean ## Package the chart
 	@mkdir -p $(DIST_DIR) && helm package -d $(DIST_DIR) -u .
-
-push:
-	@echo "Not implementes" && exit 1
 
 .PHONY: ci-linters clean dist push
