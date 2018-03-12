@@ -29,6 +29,10 @@ jobs:
             - "0b:0b:0f:19:89:13:94:a8:34:30:b4:13:cb:90:78:25"
 
       - run:
+          name: Install tools
+          command: tests/circle/install.sh
+
+      - run:
           name: Package the charts
           command: make dist
 
