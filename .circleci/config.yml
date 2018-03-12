@@ -1,13 +1,49 @@
+defaults: &defaults
+  working_directory: ~/repo
+
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/golang:1.8.1
-     steps:
-       - checkout
-       - run:
-           name: Install tools
-           command: tests/circle/install.sh
-       - run:
-           name: Run the linters
-           command: make ci-linters
+  lint:
+    <<: *defaults
+    docker:
+      - image: circleci/golang:1.8.1
+    steps:
+      - checkout
+      - run:
+          name: Install tools
+          command: tests/circle/install.sh
+
+      - run:
+          name: Run the linters
+          command: make ci-linters
+
+  publish:
+    <<: *defaults
+    docker:
+      - image: circleci/golang:1.8.1
+
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "0b:0b:0f:19:89:13:94:a8:34:30:b4:13:cb:90:78:25"
+
+      - run:
+          name: Package the charts
+          command: make dist
+
+      - run:
+          name: Publish the charts
+          command: make publish
+
+workflows:
+  version: 2
+  lint-publish:
+    jobs:
+      - lint
+      - publish:
+          requires:
+            - lint
+          filters:
+            branches:
+              only: master
