@@ -26,7 +26,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "0b:0b:0f:19:89:13:94:a8:34:30:b4:13:cb:90:78:25"
+            - "fd:ab:ac:70:6f:88:46:16:91:7c:f7:3d:82:9a:fa:f5"
 
       - run:
           name: Configure git
