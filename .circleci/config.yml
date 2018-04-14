@@ -29,6 +29,12 @@ jobs:
             - "0b:0b:0f:19:89:13:94:a8:34:30:b4:13:cb:90:78:25"
 
       - run:
+          name: Configure git
+          command: |
+            git config --global user.email "circleci@requestyoracks.org"
+            git config --global user.name "CircleCI"
+
+      - run:
           name: Install tools
           command: tests/circle/install.sh
 
