@@ -42,7 +42,7 @@ resources: {}
 
 env:
   DATABASE_URL:  postgres://postgres:postgres@$(POSTGRESQL_SERVICE_HOST):$(POSTGRESQL_SERVICE_PORT)/postgres
-  REDIS_URL: redis://$(REDIS_SERVICE_HOST):$(REDIS_SERVICE_PORT)
+  REDIS_URL: redis://$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
 # Configure the persistence.
 # This also allows live reload in minikube.
 persistence:
