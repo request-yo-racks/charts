@@ -17,12 +17,6 @@ cd "${GROOT}"
 git checkout -b gh-pages origin/gh-pages 2>/dev/null || git checkout gh-pages
 
 # Check for new packages.
-if [ -d dist ]; then
-  echo "Nothing to publish."
-  previous_branch
-  exit 0
-fi
-
 NEW_PACKAGES=0
 for f in $(ls dist/*); do
   if [ ! -f "basename ${f}" ]; then
