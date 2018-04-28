@@ -46,7 +46,7 @@ env:
 # Configure the persistence.
 # This also allows live reload in minikube.
 persistence:
-  enabled: true
+  enabled: false
   accessMode: ReadWriteOnce
   size: 1Gi
   hostPath:

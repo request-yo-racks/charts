@@ -51,16 +51,20 @@ spec:
               value: {{ $value }}
             {{- end }}
           {{- end }}
+          {{- if .Values.persistence.enabled }}
           volumeMounts:
             - mountPath: "/code"
               name: code
+          {{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
+      {{- if .Values.persistence.enabled }}
       volumes:
         - name: code
           persistentVolumeClaim:
             claimName: {{ template "ryr-api.fullname" . }}
+      {{- end }}
