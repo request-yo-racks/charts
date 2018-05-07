@@ -55,7 +55,7 @@ spec:
           {{- end }}
           {{- if .Values.persistence.enabled }}
           volumeMounts:
-            - mountPath: "/code"
+            - mountPath: "/usr/src/app"
               name: code
           {{- end }}
           resources:
