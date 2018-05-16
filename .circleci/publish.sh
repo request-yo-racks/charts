@@ -35,6 +35,9 @@ fi
 # Reindex
 helm repo index --url https://request-yo-racks.github.io/charts .
 
+# Generate static index.html
+venv/bin/moban -c index.yaml -t index.html.j2 -o index.html
+
 # Add the new packages.
 git add .
 FILES=$(git status -s)

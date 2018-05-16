@@ -24,4 +24,4 @@ clean: ## Remove unwanted files in this project (!DESTRUCTIVE!)
 dist: clean ## Package the chart
 	@mkdir -p $(DIST_DIR) && helm package -d $(DIST_DIR) -u .
 
-.PHONY: ci-linters clean dist push
+.PHONY: ci-linters clean dist

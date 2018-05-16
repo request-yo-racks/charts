@@ -20,9 +20,11 @@ clean: ## Remove unwanted files in this project (!DESTRUCTIVE!)
 	@cd $(TOPDIR) && git clean -ffdx && git reset --hard
 
 publish: ## Publish the charts
-	@bash $(TOPDIR)/tools/publish.sh
+	@bash $(TOPDIR)/.circleci/publish.sh
 
 setup: ## Setup the full environment (default)
+	python3 -m venv venv
+	. venv/bin/activate && pip install moban==0.1.3
 
 $(TOPTARGETS): $(CHARTS)
 
