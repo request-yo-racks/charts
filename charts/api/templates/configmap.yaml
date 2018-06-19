@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: {{ template "ryr-api.fullname" . }}
   namespace: default
-data:
 {{- if .Values.configmap }}
+data:
 {{- range $key, $value := .Values.configmap }}
   {{ $key }}: {{ $value }}
 {{- end }}

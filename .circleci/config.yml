@@ -6,12 +6,12 @@ jobs:
   lint:
     <<: *defaults
     docker:
-      - image: circleci/golang:1.8.1
+      - image: circleci/golang:1.10.3
     steps:
       - checkout
       - run:
           name: Install tools
-          command: | 
+          command: |
             .circleci/install.sh
 
       - run:
