@@ -1,7 +1,7 @@
 apiVersion: v1
 description: The RYR API project
 name: api
-version: 0.2.5
+version: 0.2.6
 appVersion: 0.1.7
 home: https://api.requestyoracks.org
 sources:
