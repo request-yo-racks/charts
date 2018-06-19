@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: requestyoracks/api
-  tag: stable
+  tag: 0.1.7
   pullPolicy: IfNotPresent
 
 # Configure the Service
@@ -23,27 +23,8 @@ ingress:
   annotations:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
+  tls: []
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  # requests:
-  #  cpu: 100m
-  #  memory: 128Mi
-
-# Environment.
-env:
-  DATABASE_URL:  postgres://postgres:$(postgres-password)@$(POSTGRESQL_SERVICE_HOST):$(POSTGRESQL_SERVICE_PORT)/postgres
-  REDIS_URL: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
 
 # Configure the persistence.
 # This also allows live reload in minikube.
@@ -53,6 +34,11 @@ persistence:
   size: 1Gi
   hostPath:
     path: /data
+
+# Environment.
+env:
+  DATABASE_URL:  postgres://postgres:$(postgres-password)@$(POSTGRESQL_SERVICE_HOST):$(POSTGRESQL_SERVICE_PORT)/postgres
+  REDIS_URL: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
 
 # Configmap for the API.
 configmap:
