@@ -3,7 +3,22 @@ entries:
   api:
   - apiVersion: v1
     appVersion: 0.1.7
-    created: 2018-05-16T16:55:52.008418433Z
+    created: 2018-06-19T20:06:08.316391515Z
+    description: The RYR API project
+    digest: d1638f3c26831f2cf6ec0e5fbc3925525899246e8cc74fc82a7ec22914990a5f
+    home: https://api.requestyoracks.org
+    maintainers:
+    - email: remy.greinhofer@requestyoracks.org
+      name: Rémy Greinhofer
+    name: api
+    sources:
+    - https://github.com/request-yo-racks/charts/tree/master/charts/api
+    urls:
+    - https://request-yo-racks.github.io/charts/api-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v1
+    appVersion: 0.1.7
+    created: 2018-06-19T20:06:08.315823321Z
     description: The RYR API project
     digest: 3a93374b14e06df5cfea0e9ce7150b908af24d92630c6df086de99d720fed7ca
     home: https://api.requestyoracks.org
@@ -18,7 +33,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.007596533Z
+    created: 2018-06-19T20:06:08.315188357Z
     description: RYR api chart
     digest: b2e7d0bf56e645a68b18fcba4988088883f325df8fab4176cdd43c5835fc9678
     name: api
@@ -27,7 +42,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.00695572Z
+    created: 2018-06-19T20:06:08.314797785Z
     description: RYR api chart
     digest: 4f5b73f63e5d1ea923179ea6da1e39ed48857c7eaf860a7f969e029e34ddf5e5
     name: api
@@ -36,7 +51,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.006452024Z
+    created: 2018-06-19T20:06:08.314397934Z
     description: RYR api chart
     digest: 37aaa2636132b79d168e8d08d2d0fc67bfdbb246811c94b487fd17a8c5d12af9
     name: api
@@ -45,7 +60,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.005967808Z
+    created: 2018-06-19T20:06:08.314003405Z
     description: RYR api chart
     digest: 675ca668d80fd7ab178c0f067b6021e4a20af3b3f8371632d5ee4e4dbc0bf019
     name: api
@@ -54,7 +69,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.005444709Z
+    created: 2018-06-19T20:06:08.313570654Z
     description: RYR api chart
     digest: d6f7dc91fdbbe89ec12705788576562af9274df8e9094b3ef8c8bddbef641d3c
     name: api
@@ -63,7 +78,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.004967764Z
+    created: 2018-06-19T20:06:08.313183884Z
     description: RYR api chart
     digest: 39e49cbfa9221ee5ad1e29a5cb9a7c0dc5c7d9f702ef988baef89e5c24f4e114
     name: api
@@ -72,7 +87,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.004487018Z
+    created: 2018-06-19T20:06:08.312798493Z
     description: RYR api chart
     digest: e385c68a579cddf018c72318fc30e9cc06579c97b8e28033f3ad0a1940f1bf66
     name: api
@@ -81,7 +96,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.003978693Z
+    created: 2018-06-19T20:06:08.312399874Z
     description: RYR api chart
     digest: 31857a014fa0cf6dea669688d9a6e3626afaee8b6d531f12366a102302ed9f3f
     name: api
@@ -90,7 +105,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-05-16T16:55:52.00349364Z
+    created: 2018-06-19T20:06:08.311933822Z
     description: A Helm chart for Kubernetes
     digest: 9dcfc33becaa9bad3ba848e74bb4f829abf4abb42ac7baf84866b57ba3a04e3c
     name: api
@@ -100,7 +115,7 @@ entries:
   web:
   - apiVersion: v1
     appVersion: 0.9.0
-    created: 2018-05-16T16:55:52.012003675Z
+    created: 2018-06-19T20:06:08.31827468Z
     description: The RYR Progressive Web Application
     digest: af52e2b178942971972f3170b364fac09a8fe82a31f89495d63f8fb9089e0acb
     home: https://www.requestyoracks.org
@@ -115,7 +130,7 @@ entries:
     version: 0.9.1
   - apiVersion: v1
     appVersion: 0.9.0
-    created: 2018-05-16T16:55:52.011517577Z
+    created: 2018-06-19T20:06:08.31784409Z
     description: RYR web chart
     digest: c378eaca3b4af66e05ad770ba1ed008d140a710b730d98dbfb9c2c5a0592b831
     name: web
@@ -124,7 +139,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2018-05-16T16:55:52.011044537Z
+    created: 2018-06-19T20:06:08.31746403Z
     description: RYR web chart
     digest: 6e573bd033ec918e3666ce9e54fefe40c86086cc57021a4069f7dab415b2bf86
     name: web
@@ -133,7 +148,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-05-16T16:55:52.009816074Z
+    created: 2018-06-19T20:06:08.317069035Z
     description: RYR web chart
     digest: 4042ba3cd64a09367476d005dfdcd477cd65cd05af9334839a95fab72badca91
     name: web
@@ -142,11 +157,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2018-05-16T16:55:52.008864214Z
+    created: 2018-06-19T20:06:08.316718313Z
     description: RYR web chart
     digest: 0975efefdfda24339741fa8c9f52841e88c05e4dac8db0a160e97dd40153a2c3
     name: web
     urls:
     - https://request-yo-racks.github.io/charts/web-0.1.0.tgz
     version: 0.1.0
-generated: 2018-05-16T16:55:52.002777369Z
+generated: 2018-06-19T20:06:08.311415055Z
