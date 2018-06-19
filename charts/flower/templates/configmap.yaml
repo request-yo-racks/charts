@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "flower.fullname" . }}
+  namespace: default
+{{- if .Values.configmap }}
+data:
+{{- range $key, $value := .Values.configmap }}
+  {{ $key }}: {{ $value | quote }}
+{{- end }}
+{{- end }}
