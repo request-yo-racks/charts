@@ -1,0 +1,25 @@
+# Default values for celery-worker.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: requestyoracks/api
+  tag: 0.2.0
+  pullPolicy: IfNotPresent
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Environment.
+env:
+  CELERY_BROKER_URL: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
+  CELERY_RESULT_BACKEND: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
+
+configmap: {}
