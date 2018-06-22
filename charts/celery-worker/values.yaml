@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: requestyoracks/api
-  tag: 0.2.0
+  tag: 0.3.0
   pullPolicy: IfNotPresent
 
 resources: {}
@@ -21,5 +21,6 @@ affinity: {}
 env:
   CELERY_BROKER_URL: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
   CELERY_RESULT_BACKEND: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
+  REDIS_URL: redis://$(redis-password)@$(REDIS_MASTER_SERVICE_HOST):$(REDIS_MASTER_SERVICE_PORT)
 
 configmap: {}
